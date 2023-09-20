@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "Haruna Minoura",
     "section": "",
-    "text": "Assignment 1\n\n\n\n\n\n\n\nAssignment\n\n\ngenerative art\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nPractice 1\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment Blog\n\n\n\n\n\n\n\nAssignment\n\n\ngenerative art\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\nNo matching items"
+    "text": "Assignment 2\n\n\n\n\n\n\n\nAssignment\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 1\n\n\n\n\n\n\n\nAssignment\n\n\ngenerative art\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nPractice 1\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment Blog\n\n\n\n\n\n\n\nAssignment\n\n\ngenerative art\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -40,5 +40,12 @@
     "title": "Assignment 1",
     "section": "",
     "text": "Generative art example:\nWorks by Michael Hansmeyer, an architect using computational and algorithmic architecture techniques. https://www.michael-hansmeyer.com/projects  \n\n\n\nFall image using the color option: “darkorange2”\n\n\n\nCritique of a chart:\nBartlett, K. (2022, October 31). Survey: Africans See China as Positive Force. VOA. https://www.voanews.com/a/survey-africans-see-china-as-positive-force/6813313.html\nThis VOA article is based on a public opinion surveys conducted in 25 countries on views toward China, the US, and Taiwan. The article makes the argument that people in Africa are more supportive of China, while people from other parts of the world hold negative views about China. It only shows one bar graph of one variable – respondents with a negative view toward China, which is actually a counterintuitive way to graph opinion polls, as we often associate bar graphs indicating % of views with positive views."
+  },
+  {
+    "objectID": "posts/Assignment2/index.html",
+    "href": "posts/Assignment2/index.html",
+    "title": "Assignment 2",
+    "section": "",
+    "text": "Plotting functions using the Happy Planet data set http://happyplanetindex.org\nBar chart of average HPI by Continent:"
   }
 ]
