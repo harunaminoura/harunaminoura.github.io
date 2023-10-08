@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Haruna Minoura",
     "section": "",
-    "text": "Assignment 3\n\n\n\n\n\n\n\nAssignment\n\n\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 2\n\n\n\n\n\n\n\nAssignment\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 1\n\n\n\n\n\n\n\nAssignment\n\n\ngenerative art\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nPractice 1\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment Blog\n\n\n\n\n\n\n\nAssignment\n\n\ngenerative art\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\nNo matching items"
+    "text": "Assignment 4\n\n\n\n\n\n\n\nAssignment\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 3\n\n\n\n\n\n\n\nAssignment\n\n\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 2\n\n\n\n\n\n\n\nAssignment\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 1\n\n\n\n\n\n\n\nAssignment\n\n\ngenerative art\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nPractice 1\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\n  \n\n\n\n\nAssignment Blog\n\n\n\n\n\n\n\nAssignment\n\n\ngenerative art\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2023\n\n\nHaruna Minoura\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -47,5 +47,12 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "posts/Assignment4/index.html",
+    "href": "posts/Assignment4/index.html",
+    "title": "Assignment 4",
+    "section": "",
+    "text": "Part of Assignment 4 (hackathon) No. 3 barchart:\n\nlibrary(ggplot2)\nlibrary(gridExtra)\n\n# Load the USArrests dataset\ndata(USArrests)\n\n# Arrange the data frame by the \"Murder\" variable in ascending order\nUSArrests_sorted_murder &lt;- USArrests[order(USArrests$Murder), ]\n\n# Create the flipped bar chart for \"Murder\" by states\nplot_murder &lt;- ggplot(USArrests_sorted_murder, aes(x = Murder, y = reorder(rownames(USArrests_sorted_murder), Murder))) +\n  geom_bar(stat = \"identity\", fill = \"red\") +\n  labs(x = \"Murder arrests\", y = \"State\") +\n  theme_minimal() +\n  theme(axis.text.y = element_text(hjust = 1))\n\n# Reuse the same ordering for the \"Assault\" chart\nplot_assault &lt;- ggplot(USArrests_sorted_murder, aes(x = Assault, y = reorder(rownames(USArrests_sorted_murder), Murder))) +\n  geom_bar(stat = \"identity\", fill = \"orange\") +\n  labs(x = \"Assault arrests\", y = \"\") +\n  theme_minimal() +\n  theme(axis.text.y = element_blank())  # Remove y-axis labels for the second plot\n\n# Combine both plots side by side\ngrid.arrange(plot_murder, plot_assault, ncol = 2,\n             top = \"Murder and Assult Rates by State (per 100,000 residents) \n             (Source: R dataset: Violent Crime Rates by US State (USArrest))\")"
   }
 ]
