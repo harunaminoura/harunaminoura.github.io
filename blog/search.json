@@ -35,6 +35,13 @@
     "text": "Anscombe’s quartet of linear regressions using ggplot2\nReference for code: Sanjana P (2023, March 13). RPubs. Anscombe’s quartet.\nhttps://rpubs.com/Sanjana01/1014918\n\n# Load the ggplot2 library\nlibrary(ggplot2)\nlibrary(gridExtra)\n\n# Load the Anscombe's Quartet dataset\ndata(\"anscombe\")\n\n# Scatter plots\np1 &lt;- ggplot(data=anscombe, aes(x=x1, y=y1)) + \n  geom_point(color = \"orange\") + \n  labs(title=\"Pair 1\")\n\np2 &lt;- ggplot(data=anscombe, aes(x=x2, y=y2)) + \n  geom_point(color = \"orange\") + \n  labs(title=\"Pair 2\")\n\np3 &lt;-ggplot(data=anscombe, aes(x=x3, y=y3)) + \n  geom_point(color = \"orange\") + \n  labs(title=\"Pair 3\")\n\np4 &lt;- ggplot(data=anscombe, mapping=aes(x=x4, y=y4)) + \n  geom_point(color = \"orange\") + \n  labs(title=\"Pair 4\")\n\ngrid.arrange(p1, p2, p3, p4, nrow = 2, ncol = 2, \n             top = \"Anscombe's Quartet of Linear Regressions (using ggplot2)\")\n\n\n\n# fit linear model\nlm1 = lm(anscombe$y1~anscombe$x1)\nlm2 = lm(anscombe$y2~anscombe$x2)\nlm3 = lm(anscombe$y3~anscombe$x3)\nlm4 = lm(anscombe$y4~anscombe$x4)\n\n# combine scatter plot with linear model\np1 &lt;- ggplot(data=anscombe, aes(x=x1, y=y1)) + \n  geom_point(color = \"orange\") + \n  labs(title=\"Pair 1\") +\n  geom_smooth(method=\"lm\", color = \"blue\",se=FALSE)\n\np2 &lt;- ggplot(data=anscombe, aes(x=x2, y=y2)) + \n  geom_point(color = \"orange\") + \n  labs(title=\"Pair 2\") +\n  geom_smooth(method=\"lm\", color = \"blue\",se=FALSE)\n\np3 &lt;-ggplot(data=anscombe, aes(x=x3, y=y3)) + \n  geom_point(color = \"orange\") + \n  labs(title=\"Pair 3\") +\n  geom_smooth(method=\"lm\", color = \"blue\",se=FALSE)\n\np4 &lt;- ggplot(data=anscombe, mapping=aes(x=x4, y=y4)) + \n  geom_point(color = \"orange\") + \n  labs(title=\"Pair 4\") +\n  geom_smooth(method=\"lm\", color = \"blue\",se=FALSE)\n\ngrid.arrange(p1, p2, p3, p4, nrow = 2, ncol = 2,\n             top = \"Anscombe's Quartet of Linear Regressions (using ggplot2)\")\n\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
+    "objectID": "posts/Assignment4/index.html",
+    "href": "posts/Assignment4/index.html",
+    "title": "Assignment 4",
+    "section": "",
+    "text": "Part of Assignment 4 (hackathon) No. 3 barchart:\n\nlibrary(ggplot2)\nlibrary(gridExtra)\n\n# Load the USArrests dataset\ndata(USArrests)\n\n# Arrange the data frame by the \"Murder\" variable in ascending order\nUSArrests_sorted_murder &lt;- USArrests[order(USArrests$Murder), ]\n\n# Create the flipped bar chart for \"Murder\" by states\nplot_murder &lt;- ggplot(USArrests_sorted_murder, aes(x = Murder, y = reorder(rownames(USArrests_sorted_murder), Murder))) +\n  geom_bar(stat = \"identity\", fill = \"red\") +\n  labs(x = \"Murder arrests\", y = \"State\") +\n  theme_minimal() +\n  theme(axis.text.y = element_text(hjust = 1))\n\n# Reuse the same ordering for the \"Assault\" chart\nplot_assault &lt;- ggplot(USArrests_sorted_murder, aes(x = Assault, y = reorder(rownames(USArrests_sorted_murder), Murder))) +\n  geom_bar(stat = \"identity\", fill = \"orange\") +\n  labs(x = \"Assault arrests\", y = \"\") +\n  theme_minimal() +\n  theme(axis.text.y = element_blank())  # Remove y-axis labels for the second plot\n\n# Combine both plots side by side\ngrid.arrange(plot_murder, plot_assault, ncol = 2,\n             top = \"Murder and Assult Rates by State (per 100,000 residents) \n             (Source: R dataset: Violent Crime Rates by US State (USArrest))\")"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Haruna Minoura",
@@ -47,12 +54,5 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
-  },
-  {
-    "objectID": "posts/Assignment4/index.html",
-    "href": "posts/Assignment4/index.html",
-    "title": "Assignment 4",
-    "section": "",
-    "text": "Part of Assignment 4 (hackathon) No. 3 barchart:\n\nlibrary(ggplot2)\nlibrary(gridExtra)\n\n# Load the USArrests dataset\ndata(USArrests)\n\n# Arrange the data frame by the \"Murder\" variable in ascending order\nUSArrests_sorted_murder &lt;- USArrests[order(USArrests$Murder), ]\n\n# Create the flipped bar chart for \"Murder\" by states\nplot_murder &lt;- ggplot(USArrests_sorted_murder, aes(x = Murder, y = reorder(rownames(USArrests_sorted_murder), Murder))) +\n  geom_bar(stat = \"identity\", fill = \"red\") +\n  labs(x = \"Murder arrests\", y = \"State\") +\n  theme_minimal() +\n  theme(axis.text.y = element_text(hjust = 1))\n\n# Reuse the same ordering for the \"Assault\" chart\nplot_assault &lt;- ggplot(USArrests_sorted_murder, aes(x = Assault, y = reorder(rownames(USArrests_sorted_murder), Murder))) +\n  geom_bar(stat = \"identity\", fill = \"orange\") +\n  labs(x = \"Assault arrests\", y = \"\") +\n  theme_minimal() +\n  theme(axis.text.y = element_blank())  # Remove y-axis labels for the second plot\n\n# Combine both plots side by side\ngrid.arrange(plot_murder, plot_assault, ncol = 2,\n             top = \"Murder and Assult Rates by State (per 100,000 residents) \n             (Source: R dataset: Violent Crime Rates by US State (USArrest))\")"
   }
 ]
